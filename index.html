@@ -136,14 +136,37 @@
   .stat-tile .lbl { font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; }
 
   /* ---------- Pricing ---------- */
-  .price-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 44px; display: grid; grid-template-columns: 1fr; gap: 36px; }
+  .price-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 44px; display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; }
   @media (min-width: 860px) { .price-panel { grid-template-columns: 1fr 1fr; padding: 48px 56px; } }
   .price-panel h2 { font-size: 28px; margin-bottom: 14px; }
   .price-panel p { color: var(--ink-soft); font-size: 16px; }
-  .price-figure { font-family: var(--font-mono); font-size: 15px; color: var(--teal-dark); margin-top: 18px; }
+  .price-figure { font-family: var(--font-body); font-size: 15px; color: var(--teal-dark); margin-top: 18px; }
   .price-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
   .price-list li { display: flex; gap: 10px; font-size: 15px; align-items: flex-start; }
   .price-list .dot { width: 18px; height: 18px; border-radius: 50%; background: #E4F2EA; color: var(--green); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 2px; }
+
+  .price-table th:last-child, .price-table td:last-child { text-align: left; }
+  .price-cell { font-size: 14px; font-weight: 500; white-space: nowrap; }
+  .price-unit { font-family: var(--font-body); font-size: 12.5px; color: var(--ink-soft); font-weight: 400; margin-left: 4px; }
+  .price-hint { font-family: var(--font-body); font-size: 12.5px; color: var(--ink-soft); font-weight: 400; }
+  .price-footnote { padding: 14px 18px; font-size: 13px; color: var(--ink-soft); border-top: 1px solid var(--line); margin: 0; }
+
+  /* Global band */
+  .global-band { background: #DCEADD; }
+  .global-grid { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: center; }
+  @media (min-width: 900px) { .global-grid { grid-template-columns: 1fr 1.1fr; } }
+  .global-copy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+  .global-copy > p { color: var(--ink-soft); font-size: 17px; margin-top: 16px; max-width: 46ch; }
+  .global-points { display: flex; flex-direction: column; gap: 22px; margin-top: 30px; }
+  .global-point strong { display: block; font-family: var(--font-display); font-size: 16.5px; margin-bottom: 4px; }
+  .global-point p { color: var(--ink-soft); font-size: 15px; }
+  .globe-figure { display: flex; justify-content: center; }
+
+  /* Global section */
+  .global-grid { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: center; }
+  @media (min-width: 900px) { .global-grid { grid-template-columns: 1fr 1fr; } }
+  .global-copy h2 { font-size: clamp(26px, 3.4vw, 34px); margin-bottom: 16px; }
+  .global-copy p { color: var(--ink-soft); font-size: 16px; max-width: 46ch; }
 
   /* ---------- FAQ ---------- */
   .faq-item { border-bottom: 1px solid var(--line); }
@@ -214,6 +237,44 @@
   </div>
 </section>
 
+<section class="global-band">
+  <div class="wrap global-grid">
+    <div class="global-copy">
+      <h2>Geography was never the hard part.</h2>
+      <p>SeeMySite doesn't care which country your sites are in. It was built that way from the start, not bolted on afterwards.</p>
+      <div class="global-points">
+        <div class="global-point">
+          <strong>GPS works exactly the same everywhere</strong>
+          <p>A site in rural Otago verifies exactly the same way as one in downtown Toronto — it's your phone's own GPS, not a local address lookup that might not cover where you are.</p>
+        </div>
+        <div class="global-point">
+          <strong>Billed in your own currency</strong>
+          <p>Pricing is set in USD, but you're charged in your local currency automatically at checkout — no manual conversion, no surprises.</p>
+        </div>
+        <div class="global-point">
+          <strong>Nothing to install locally</strong>
+          <p>It's a website that behaves like an app. If a worker has a phone and a browser, they're covered — no country-specific app store, no local server.</p>
+        </div>
+      </div>
+    </div>
+    <div class="globe-figure">
+      <svg viewBox="0 0 320 320" style="width:100%; max-width:340px;">
+        <circle cx="160" cy="160" r="130" fill="none" stroke="#0F6E6E" stroke-width="2"/>
+        <ellipse cx="160" cy="160" rx="130" ry="46" fill="none" stroke="#0F6E6E" stroke-width="1.5" opacity="0.55"/>
+        <ellipse cx="160" cy="160" rx="70" ry="130" fill="none" stroke="#0F6E6E" stroke-width="1.5" opacity="0.55"/>
+        <line x1="30" y1="160" x2="290" y2="160" stroke="#0F6E6E" stroke-width="1.5" opacity="0.4"/>
+        <line x1="160" y1="30" x2="160" y2="290" stroke="#0F6E6E" stroke-width="1.5" opacity="0.4"/>
+        <circle cx="112" cy="118" r="7" fill="#2E7D5B"/>
+        <circle cx="112" cy="118" r="14" fill="none" stroke="#2E7D5B" stroke-width="3" opacity="0.3"/>
+        <circle cx="222" cy="142" r="7" fill="#C98A2C"/>
+        <circle cx="222" cy="142" r="14" fill="none" stroke="#C98A2C" stroke-width="3" opacity="0.3"/>
+        <circle cx="168" cy="222" r="7" fill="#2E7D5B"/>
+        <circle cx="168" cy="222" r="14" fill="none" stroke="#2E7D5B" stroke-width="3" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
 <section id="how-it-works">
   <div class="wrap">
     <div class="section-head">
@@ -235,6 +296,65 @@
         <div class="step-num">3</div>
         <h3>You see it all from one place</h3>
         <p>Live attendance, timesheets ready for payroll, and any hazard or incident reported on the spot — photos included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap preview-wrap">
+    <div class="preview-copy">
+      <h2>The office sees it too, in real time.</h2>
+      <p>Every check-in, hazard, and site updates the same dashboard the moment it happens — nobody's chasing paper timesheets at the end of the week.</p>
+      <div class="check"><span class="dot">✓</span><span>Who's on site right now, and where</span></div>
+      <div class="check"><span class="dot">✓</span><span>Every site, its code, and who's responsible for it</span></div>
+      <div class="check"><span class="dot">✓</span><span>Timesheets ready to export, no reconstruction needed</span></div>
+    </div>
+    <div>
+      <div class="tour-tabs">
+        <button class="tour-tab active" data-tab="dash">Dashboard</button>
+        <button class="tour-tab" data-tab="sites">Sites</button>
+        <button class="tour-tab" data-tab="time">Timesheet</button>
+      </div>
+
+      <div class="tour-pane active" data-pane="dash">
+        <div class="mock-card">
+          <div class="mock-bar"><span class="active">Dashboard</span></div>
+          <div class="stat-grid">
+            <div class="stat-tile"><div class="num teal">6</div><div class="lbl">Active sites</div></div>
+            <div class="stat-tile"><div class="num teal">14</div><div class="lbl">Workers on site</div></div>
+            <div class="stat-tile"><div class="num amber">2</div><div class="lbl">Open events</div></div>
+            <div class="stat-tile"><div class="num amber">1</div><div class="lbl">Overdue</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-pane" data-pane="sites">
+        <div class="mock-card">
+          <div class="mock-bar"><span class="active">Sites</span></div>
+          <table class="mock">
+            <thead><tr><th>Site name</th><th>Code</th><th>Assigned to</th><th>Radius</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Oban Road Site</td><td class="mono">OBN042</td><td>Auckland Region</td><td>150 m</td><td><span class="tag tag-verified">Active</span></td></tr>
+              <tr><td>Riverside Depot</td><td class="mono">RIV018</td><td>Wellington Region</td><td>100 m</td><td><span class="tag tag-verified">Active</span></td></tr>
+              <tr><td>Harbour Bridge Upgrade</td><td class="mono">HBU007</td><td>Auckland Region</td><td>200 m</td><td><span class="tag tag-verified">Active</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tour-pane" data-pane="time">
+        <div class="mock-card">
+          <div class="mock-bar"><span class="active">Timesheet</span><span>·</span><span>Oban Road Site</span></div>
+          <table class="mock">
+            <thead><tr><th>Worker</th><th>Login</th><th>Logout</th><th>Hours</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>J. Smith</td><td>7:58 AM</td><td>4:02 PM</td><td>8.07</td><td><span class="tag tag-verified">Verified</span></td></tr>
+              <tr><td>R. Patel</td><td>8:01 AM</td><td>3:45 PM</td><td>7.73</td><td><span class="tag tag-verified">Verified</span></td></tr>
+              <tr><td>A. Nguyen</td><td>7:55 AM</td><td>—</td><td>—</td><td><span class="tag tag-hazard">On site</span></td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -309,65 +429,6 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap preview-wrap">
-    <div class="preview-copy">
-      <h2>The office sees it too, in real time.</h2>
-      <p>Every check-in, hazard, and site updates the same dashboard the moment it happens — nobody's chasing paper timesheets at the end of the week.</p>
-      <div class="check"><span class="dot">✓</span><span>Who's on site right now, and where</span></div>
-      <div class="check"><span class="dot">✓</span><span>Every site, its code, and who's responsible for it</span></div>
-      <div class="check"><span class="dot">✓</span><span>Timesheets ready to export, no reconstruction needed</span></div>
-    </div>
-    <div>
-      <div class="tour-tabs">
-        <button class="tour-tab active" data-tab="dash">Dashboard</button>
-        <button class="tour-tab" data-tab="sites">Sites</button>
-        <button class="tour-tab" data-tab="time">Timesheet</button>
-      </div>
-
-      <div class="tour-pane active" data-pane="dash">
-        <div class="mock-card">
-          <div class="mock-bar"><span class="active">Dashboard</span></div>
-          <div class="stat-grid">
-            <div class="stat-tile"><div class="num teal">6</div><div class="lbl">Active sites</div></div>
-            <div class="stat-tile"><div class="num teal">14</div><div class="lbl">Workers on site</div></div>
-            <div class="stat-tile"><div class="num amber">2</div><div class="lbl">Open events</div></div>
-            <div class="stat-tile"><div class="num amber">1</div><div class="lbl">Overdue</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tour-pane" data-pane="sites">
-        <div class="mock-card">
-          <div class="mock-bar"><span class="active">Sites</span></div>
-          <table class="mock">
-            <thead><tr><th>Site name</th><th>Code</th><th>Assigned to</th><th>Radius</th><th>Status</th></tr></thead>
-            <tbody>
-              <tr><td>Oban Road Site</td><td class="mono">OBN042</td><td>Auckland Region</td><td>150 m</td><td><span class="tag tag-verified">Active</span></td></tr>
-              <tr><td>Riverside Depot</td><td class="mono">RIV018</td><td>Wellington Region</td><td>100 m</td><td><span class="tag tag-verified">Active</span></td></tr>
-              <tr><td>Harbour Bridge Upgrade</td><td class="mono">HBU007</td><td>Auckland Region</td><td>200 m</td><td><span class="tag tag-verified">Active</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="tour-pane" data-pane="time">
-        <div class="mock-card">
-          <div class="mock-bar"><span class="active">Timesheet</span><span>·</span><span>Oban Road Site</span></div>
-          <table class="mock">
-            <thead><tr><th>Worker</th><th>Login</th><th>Logout</th><th>Hours</th><th>Status</th></tr></thead>
-            <tbody>
-              <tr><td>J. Smith</td><td>7:58 AM</td><td>4:02 PM</td><td>8.07</td><td><span class="tag tag-verified">Verified</span></td></tr>
-              <tr><td>R. Patel</td><td>8:01 AM</td><td>3:45 PM</td><td>7.73</td><td><span class="tag tag-verified">Verified</span></td></tr>
-              <tr><td>A. Nguyen</td><td>7:55 AM</td><td>—</td><td>—</td><td><span class="tag tag-hazard">On site</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="pricing">
   <div class="wrap">
     <div class="price-panel">
@@ -383,6 +444,32 @@
         <li><span class="dot">✓</span><span>Monthly or annual billing once you upgrade</span></li>
         <li><span class="dot">✓</span><span>Cancel any time — your data stays yours</span></li>
       </ul>
+    </div>
+
+    <div class="mock-card" style="margin-top:24px;">
+      <div class="mock-bar"><span class="active">What it costs</span></div>
+      <table class="mock price-table">
+        <thead><tr><th>Plan includes</th><th>Price $USD</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Monthly minimum — 1 Admin (full access) + 1 Worker</td>
+            <td class="mono price-cell">$10<span class="price-unit">/month</span></td>
+          </tr>
+          <tr>
+            <td>Each additional Admin <span class="price-hint">(Manager, Branch Manager, etc.)</span></td>
+            <td class="mono price-cell">$8<span class="price-unit">/month</span></td>
+          </tr>
+          <tr>
+            <td>Each additional Worker <span class="price-hint">— that's 50c a week</span></td>
+            <td class="mono price-cell">$2<span class="price-unit">/month</span></td>
+          </tr>
+          <tr>
+            <td>Larger organisation, multiple levels</td>
+            <td class="price-cell"><span class="tag tag-verified">Ask us for a price</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="price-footnote">The only additional charge is SMS, if you choose to use it to invite workers.</p>
     </div>
   </div>
 </section>
