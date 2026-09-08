@@ -354,6 +354,11 @@ footer { padding: 48px 0 40px; }
 
 .foot-copy { font-size: 13.5px; color: var(--ink-soft); }
 
+#hero-grid-cols { display: grid; grid-template-columns: 1fr; gap: 40px; }
+@media (min-width: 940px) {
+  #hero-grid-cols { grid-template-columns: 1.05fr 0.95fr; align-items: start; }
+}
+
 </style>
 
 </head>
@@ -392,17 +397,33 @@ footer { padding: 48px 0 40px; }
 
 <section class="hero">
 
-<div class="wrap">
+<div class="wrap" id="hero-grid-cols">
 
-<div style="max-width:720px;">
+<div>
 
 <span class="eyebrow-tag">30-day free trial, no card required</span>
 
-<h1>Roster your team. Know where they are.</h1>
+<h1 style="font-size: clamp(30px, 4vw, 42px);">Roster and Workforce Management — Made simple!</h1>
 
-<p class="hero-sub">SeeMySite is roster and workforce management built for teams spread across scattered sites, anywhere in the world. Schedule individuals or whole groups, assign tasks to a shift, and verify exactly where your team checked in — not just what time they typed.</p>
+<p class="hero-sub">SeeMySite is roster and workforce management software built for teams large or small, designed to work across multiple locations anywhere in the world. We know your staff want something easy to use. We also know mobility is key — and that's what SeeMySite offers.</p>
 
-<div class="hero-ctas">
+<p class="hero-sub">SeeMySite works for small organisations right through to the largest, using a custom-designed multi-node (levels) architecture — so adding, sharing, and moving staff around becomes easy. Staff are invited by you to use our PWA (Progressive Web Application), where the magic happens. They can report:</p>
+
+<div class="check"><span class="dot">✓</span><span>When they log in and out of work (geolocated)</span></div>
+<div class="check"><span class="dot">✓</span><span>Any tasks they have completed</span></div>
+<div class="check"><span class="dot">✓</span><span>Attach photos of completed work</span></div>
+<div class="check"><span class="dot">✓</span><span>Report any hazards or incidents for management action</span></div>
+<div class="check"><span class="dot">✓</span><span>Receive and review their rosters</span></div>
+<div class="check"><span class="dot">✓</span><span>See upcoming workforce</span></div>
+<div class="check"><span class="dot">✓</span><span>View files or worksheets attached to sites</span></div>
+
+<p class="hero-sub" style="margin-top: 24px;">At the management level, you'll have access to:</p>
+
+<div class="check"><span class="dot">✓</span><span>A live dashboard recording who's logged in and where</span></div>
+<div class="check"><span class="dot">✓</span><span>Any overdue items or events that need attending to</span></div>
+<div class="check"><span class="dot">✓</span><span>Creating rosters for individuals or groups, assigning tasks, and receiving timesheet information on demand — export it whenever you want</span></div>
+
+<div class="hero-ctas" style="margin-top: 28px;">
 
 <a href="https://seemysite-app.vercel.app/signup" class="btn btn-primary">Start free trial</a>
 
@@ -414,9 +435,9 @@ footer { padding: 48px 0 40px; }
 
 </div>
 
-<div class="hero-media">
+<div class="hero-media" style="margin-top: 0;">
 
-<img src="hero-screens.jpg" alt="SeeMySite dashboard screens showing Sites, Workers, Time Records, and Roster with group scheduling" width="2000" height="1100" loading="eager">
+<img src="hero-product-shots.jpg" alt="SeeMySite dashboard screens showing Roster, Workers, Sites, and Time Records" width="937" height="791" loading="eager" style="border-radius:16px;">
 
 </div>
 
@@ -572,7 +593,7 @@ footer { padding: 48px 0 40px; }
 
 <div class="check"><span class="dot">✓</span><span>Group schedules and task assignments for every shift</span></div>
 
-<div class="check"><span class="dot">✓</span><span>Every site, its code, and who's responsible for it</span></div>
+<div class="check"><span class="dot">✓</span><span>Every site is displayed and who's responsible for it</span></div>
 
 <div class="check"><span class="dot">✓</span><span>Timesheets ready to export, no reconstruction needed</span></div>
 
@@ -940,6 +961,11 @@ footer { padding: 48px 0 40px; }
 
 </table>
 
+<div class="callout" style="margin-top: 16px; border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; background: #FBF3E7;">
+<strong style="color: var(--amber);">★ ★</strong>
+<span style="margin-left: 6px;">No need to guess — we'll get back to you with a quote. Have a look at our pricing above: nothing is hidden, and it's super cost effective. Cancel any time.</span>
+</div>
+
 <p class="price-footnote">The only additional charge is SMS, if you choose to use it to invite workers.</p>
 
 </div>
@@ -1042,7 +1068,9 @@ footer { padding: 48px 0 40px; }
 
 <a href="https://seemysite-app.vercel.app/login">Sign in</a>
 
-<a href="mailto:hello@seemysite.com">Contact</a>
+<a href="privacy.html">Privacy</a>
+
+<a href="mailto:support@seemysite.cloud">Contact</a>
 
 </div>
 
