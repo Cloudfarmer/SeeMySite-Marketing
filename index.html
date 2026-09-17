@@ -52,15 +52,15 @@ header { position: sticky; top: 0; z-index: 20; background: rgba(250,250,248,0.9
 .mobile-hide { display: none; }
 @media (min-width: 860px) { .mobile-hide { display: flex; } }
 /* ---------- Hero ---------- */
-.hero { padding: 72px 0 88px; text-align: center; }
+.hero { padding: 72px 0 88px; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 40px; } }
 .eyebrow-tag { display: inline-block; font-size: 13.5px; font-weight: 600; color: var(--teal-dark); background: #E4F2EA; padding: 6px 13px; border-radius: 999px; margin-bottom: 22px; }
 .hero h1 { font-size: clamp(34px, 4.6vw, 52px); line-height: 1.08; font-weight: 700; }
-.hero-sub-block { max-width: 900px; margin: 20px auto 0; text-align: left; }
-.hero-sub { font-size: 18px; color: var(--ink-soft); margin-top: 20px; }
-.hero-sub:first-child { margin-top: 0; }
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; justify-content: center; }
+.hero-sub { font-size: 18px; color: var(--ink-soft); margin-top: 20px; max-width: 46ch; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .hero-note { font-size: 13.5px; color: var(--ink-soft); margin-top: 16px; }
-.hero-media { margin-top: 48px; }
+.hero-media { margin-top: 56px; }
 .hero-media img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 30px 70px rgba(30,36,34,0.14); }
 /* Geofence ring graphic */
 .ring-stage { position: relative; width: 100%; max-width: 380px; margin: 0 auto; }
@@ -176,6 +176,10 @@ footer { padding: 48px 0 40px; }
 .footer-links a { text-decoration: none; }
 .footer-links a:hover { color: var(--ink); }
 .foot-copy { font-size: 13.5px; color: var(--ink-soft); }
+#hero-grid-cols { display: grid; grid-template-columns: 1fr; gap: 40px; }
+@media (min-width: 940px) {
+#hero-grid-cols { grid-template-columns: 1.05fr 0.95fr; align-items: start; }
+}
 #worker-report-cols { display: grid; grid-template-columns: 1fr; gap: 40px; }
 @media (min-width: 940px) {
 #worker-report-cols { grid-template-columns: 0.9fr 1.1fr; align-items: center; }
@@ -198,22 +202,24 @@ footer { padding: 48px 0 40px; }
 </div>
 </div>
 </header>
+<section style="background:#fff; padding:0;">
+<div style="position:relative; width:100%;">
+<img src="hero-product-shots.jpg" alt="SeeMySite dashboard screens showing Roster, Workers, Calendar, Xero export, and Structure settings" style="width:100%; height:auto; display:block;">
+<div style="position:absolute; top:6%; left:0; right:0; text-align:center; padding:0 20px;">
+<h1 style="font-size: clamp(24px, 4vw, 46px); margin:0;">Roster and Workforce Management — Made simple</h1>
+</div>
+</div>
+</section>
 <section class="hero">
-<div class="wrap">
+<div class="wrap" style="max-width:760px; text-align:center;">
 <span class="eyebrow-tag">30-day free trial, no card required</span>
-<h1 style="font-size: clamp(26px, 3.2vw, 34px);">Roster and Workforce Management — Made simple!</h1>
-<div class="hero-sub-block">
 <p class="hero-sub">SeeMySite is roster and workforce management software built for teams large or small, designed to work across multiple locations anywhere in the world. We know your staff want something easy to use. We also know mobility is key — and that's what SeeMySite offers.</p>
 <p class="hero-sub">SeeMySite works for small organisations right through to the largest, using a custom-designed multi-node (levels) architecture — so adding, sharing, and moving staff around becomes easy. Staff are invited by you to use our PWA (Progressive Web Application), where the magic happens.</p>
-</div>
-<div class="hero-ctas">
+<div class="hero-ctas" style="margin-top: 28px; justify-content:center;">
 <a href="https://seemysite-app.vercel.app/signup" class="btn btn-primary">Start free trial</a>
 <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
 </div>
 <p class="hero-note">No app store install — works straight from a phone's browser, even with patchy signal on site.</p>
-<div class="hero-media">
-<img src="hero-product-shots.jpg" alt="SeeMySite Roster calendar showing a month of scheduled shifts" width="1682" height="767" loading="eager" style="border-radius:16px;">
-</div>
 </div>
 </section>
 <section style="background: #E3EEF0; padding: 72px 0;">
@@ -460,9 +466,9 @@ footer { padding: 48px 0 40px; }
 <div class="wrap">
 <div class="price-panel">
 <div>
-<h2>Start free. Stay simple.</h2>
-<p>Every new company gets a genuine 30-day trial — one Manager, one Worker, no card required. Upgrade whenever you're ready, or don't.</p>
-<p class="price-figure">Paid plans scale with your team — priced per admin seat and per active worker, nothing more.</p>
+<h2>Two prices. That's it.</h2>
+<p>No tiers. No add-ons. No monthly minimum. Just pay for the seats you actually use.</p>
+<p class="price-figure">Every new company gets a genuine 30-day trial — 1 Admin seat, 5 Worker seats, no card required.</p>
 <a href="https://seemysite-app.vercel.app/signup" class="btn btn-primary" style="margin-top:26px;">Start your free trial</a>
 </div>
 <ul class="price-list">
@@ -475,29 +481,21 @@ footer { padding: 48px 0 40px; }
 <div class="mock-card" style="margin-top:24px;">
 <div class="mock-bar"><span class="active">What it costs</span></div>
 <table class="mock price-table">
-<thead><tr><th>Plan includes</th><th>Price $USD</th></tr></thead>
+<thead><tr><th>Every plan, no exceptions</th><th>Price $USD</th></tr></thead>
 <tbody>
 <tr>
-<td>Monthly minimum — 1 Admin (full access) + 1 Worker</td>
-<td class="mono price-cell">$10<span class="price-unit">/month</span></td>
+<td>Admin seat <span class="price-hint">— anyone with login access to the management console</span></td>
+<td class="mono price-cell">$5<span class="price-unit">/month each</span></td>
 </tr>
 <tr>
-<td>Each additional Admin <span class="price-hint">(Manager, Branch Manager, etc.)</span></td>
-<td class="mono price-cell">$8<span class="price-unit">/month</span></td>
-</tr>
-<tr>
-<td>Each additional Worker <span class="price-hint">— that's 50c a week</span></td>
-<td class="mono price-cell">$2<span class="price-unit">/month</span></td>
-</tr>
-<tr>
-<td>Larger organisation, multiple levels</td>
-<td class="price-cell"><span class="tag tag-verified">Ask us for a price</span></td>
+<td>Worker seat <span class="price-hint">— anyone checking in from the phone app</span></td>
+<td class="mono price-cell">$2<span class="price-unit">/month each</span></td>
 </tr>
 </tbody>
 </table>
 <div class="callout" style="margin-top: 16px; border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; background: #FBF3E7;">
 <strong style="color: var(--amber);">★ ★</strong>
-<span style="margin-left: 6px;">No need to guess — we'll get back to you with a quote. Have a look at our pricing above: nothing is hidden, and it's super cost effective. Cancel any time.</span>
+<span style="margin-left: 6px;">That's the whole price list. One Admin and one Worker is $7 a month — add as many of either as you need, and your bill scales exactly in line. No surprises, no negotiating, no "contact sales."</span>
 </div>
 <p class="price-footnote">The only additional charge is SMS, if you choose to use it to invite workers.</p>
 </div>
