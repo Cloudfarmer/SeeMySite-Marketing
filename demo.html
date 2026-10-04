@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF9BHD6400"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EF9BHD6400');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>See SeeMySite in action - Product demo video</title>
+<meta name="description" content="Watch a short walkthrough of SeeMySite: scheduling, GPS-verified check-ins, timesheets and the dashboard, from the manager's side and the worker's phone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://player.vimeo.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+--teal-dark: #0B5555;
+--teal: #0F6E6E;
+--amber: #C98A2C;
+--green: #2E7D5B;
+--red: #B4483C;
+--bg: #FAFAF8;
+--surface: #FFFFFF;
+--ink: #1E2422;
+--ink-soft: #5B6664;
+--line: #E1DFD8;
+--font-display: 'Space Grotesk', sans-serif;
+--font-body: 'Inter', sans-serif;
+--font-mono: 'IBM Plex Mono', monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.55; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01em; color: var(--ink); }
+p { margin: 0; }
+a { color: inherit; }
+img, svg { display: block; max-width: 100%; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+/* ---------- Header ---------- */
+header { position: sticky; top: 0; z-index: 20; background: rgba(250,250,248,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; text-decoration: none; }
+.brand-mark { width: 30px; height: 30px; border-radius: 8px; background: var(--teal); position: relative; flex-shrink: 0; }
+.brand-mark::after { content: ''; position: absolute; inset: 7px; border: 2px solid #fff; border-radius: 50%; }
+.nav-links { display: flex; align-items: center; gap: 28px; font-size: 14.5px; font-weight: 500; }
+.nav-links a { text-decoration: none; color: var(--ink-soft); }
+.nav-links a:hover { color: var(--ink); }
+.btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 10px; text-decoration: none; cursor: pointer; border: none; }
+.btn-primary { background: var(--teal); color: #fff; }
+.btn-primary:hover { background: var(--teal-dark); }
+.btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+.btn-ghost:hover { border-color: var(--teal); }
+.btn-sm { padding: 9px 16px; font-size: 14px; }
+.nav .btn { display: none; }
+@media (min-width: 720px) { .nav .btn { display: inline-flex; } }
+.mobile-hide { display: none; }
+@media (min-width: 860px) { .mobile-hide { display: flex; } }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+section { padding: 76px 0; }
+/* ---------- Demo page ---------- */
+.demo { padding: 56px 0 72px; }
+.demo-head { max-width: 720px; margin: 0 auto 36px; text-align: center; }
+.eyebrow-tag { display: inline-block; font-size: 13.5px; font-weight: 600; color: var(--teal-dark); background: #E4F2EA; padding: 6px 13px; border-radius: 999px; margin-bottom: 20px; }
+.demo-head h1 { font-size: clamp(30px, 4.2vw, 46px); line-height: 1.1; font-weight: 700; }
+.demo-head p { color: var(--ink-soft); font-size: 17.5px; margin-top: 16px; }
+.video-frame { max-width: 1040px; margin: 0 auto; border-radius: 20px; overflow: hidden; background: #0e1514; box-shadow: 0 30px 70px rgba(30,36,34,0.16); }
+.video-ratio { position: relative; width: 100%; aspect-ratio: 100 / 46.11; }
+.video-ratio iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-note { text-align: center; font-size: 13.5px; color: var(--ink-soft); margin-top: 16px; }
+.demo-next { max-width: 720px; margin: 40px auto 0; text-align: center; }
+.demo-next h2 { font-size: clamp(22px, 3vw, 28px); }
+.demo-next p { color: var(--ink-soft); margin-top: 10px; }
+.demo-next .hero-ctas { justify-content: center; margin-top: 22px; }
+/* ---------- CTA band + footer ---------- */
+.cta-band { background: var(--ink); color: #fff; text-align: center; padding: 88px 0; }
+.cta-band h2 { color: #fff; font-size: clamp(28px, 4vw, 38px); }
+.cta-band p { color: #B7C0BD; font-size: 16.5px; margin-top: 16px; }
+.cta-band .hero-ctas { justify-content: center; margin-top: 30px; }
+.cta-band .btn-ghost { border-color: #3A4442; color: #fff; }
+footer { padding: 48px 0 40px; }
+.footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center; border-top: 1px solid var(--line); padding-top: 28px; }
+.footer-links { display: flex; gap: 22px; font-size: 14px; color: var(--ink-soft); flex-wrap: wrap; }
+.footer-links a { text-decoration: none; }
+.footer-links a:hover { color: var(--ink); }
+.foot-copy { font-size: 13.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<header>
+<div class="nav wrap">
+<a href="index.html" class="brand"><span class="brand-mark"></span>SeeMySite</a>
+<nav class="nav-links mobile-hide">
+<a href="index.html#how-it-works">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#pricing">Pricing</a>
+<a href="index.html#faq">FAQ</a>
+</nav>
+<div style="display:flex; gap:10px; align-items:center;">
+<a href="https://seemysite-app.vercel.app/login" class="nav-links mobile-hide" style="font-weight:600;">Sign in</a>
+<a href="https://seemysite-app.vercel.app/signup" class="btn btn-primary btn-sm">Start free trial</a>
+</div>
+</div>
+</header>
+
+<main>
+<section class="demo">
+<div class="wrap">
+<div class="demo-head">
+<span class="eyebrow-tag">Product walkthrough</span>
+<h1>See SeeMySite in action</h1>
+<p>A guided tour through the dashboard, rostering, GPS-verified check-ins and timesheets, so you can see how it fits your own team before you start a trial.</p>
+</div>
+
+<div class="video-frame">
+<div class="video-ratio">
+<iframe src="https://player.vimeo.com/video/1232836230?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="SeeMySite product overview video"></iframe>
+</div>
+</div>
+<p class="video-note">Best viewed full screen. Use the fullscreen button in the player's bottom-right corner.</p>
+
+<div class="demo-next">
+<h2>Like what you see?</h2>
+<p>Set up your first site in a few minutes. 30-day free trial, no card required.</p>
+<div class="hero-ctas">
+<a href="https://seemysite-app.vercel.app/signup" class="btn btn-primary">Start free trial</a>
+<a href="index.html#features" class="btn btn-ghost">Explore features</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta-band">
+<div class="wrap">
+<h2>See who's really on site, from today.</h2>
+<p>Questions before you start? We're happy to talk it through.</p>
+<div class="hero-ctas">
+<a href="https://seemysite-app.vercel.app/signup" class="btn btn-primary">Start free trial</a>
+<a href="mailto:support@seemysite.cloud" class="btn btn-ghost">Contact us</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="footer-grid">
+<a href="index.html" class="brand" style="font-size:16px;"><span class="brand-mark" style="width:22px;height:22px;"></span>SeeMySite</a>
+<div class="footer-links">
+<a href="index.html#features">Features</a>
+<a href="index.html#pricing">Pricing</a>
+<a href="https://seemysite-app.vercel.app/login">Sign in</a>
+<a href="privacy.html">Privacy</a>
+<a href="mailto:support@seemysite.cloud">Contact</a>
+</div>
+<div class="foot-copy">&copy; <span id="year"></span> SeeMySite. All rights reserved.</div>
+</div>
+</div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
