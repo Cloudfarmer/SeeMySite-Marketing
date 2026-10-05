@@ -11,8 +11,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>See SeeMySite in action - Product demo video</title>
-<meta name="description" content="Watch a short walkthrough of SeeMySite: scheduling, GPS-verified check-ins, timesheets and the dashboard, from the manager's side and the worker's phone.">
+<title>See SeeMySite in action - Product demo videos</title>
+<meta name="description" content="Watch short walkthroughs of SeeMySite: the manager's software (scheduling, dashboard, timesheets) and the worker app (GPS-verified check-ins from a phone).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://player.vimeo.com">
@@ -63,10 +63,16 @@ header { position: sticky; top: 0; z-index: 20; background: rgba(250,250,248,0.9
 section { padding: 76px 0; }
 /* ---------- Demo page ---------- */
 .demo { padding: 56px 0 72px; }
-.demo-head { max-width: 720px; margin: 0 auto 36px; text-align: center; }
+.demo-head { max-width: 720px; margin: 0 auto 28px; text-align: center; }
 .eyebrow-tag { display: inline-block; font-size: 13.5px; font-weight: 600; color: var(--teal-dark); background: #E4F2EA; padding: 6px 13px; border-radius: 999px; margin-bottom: 20px; }
 .demo-head h1 { font-size: clamp(30px, 4.2vw, 46px); line-height: 1.1; font-weight: 700; }
 .demo-head p { color: var(--ink-soft); font-size: 17.5px; margin-top: 16px; }
+/* Switcher between the two videos */
+.switcher { display: flex; justify-content: center; gap: 6px; margin: 0 auto 28px; padding: 5px; width: fit-content; max-width: 100%; background: #EFEDE6; border-radius: 12px; }
+.switcher a { text-decoration: none; font-weight: 600; font-size: 14.5px; padding: 10px 20px; border-radius: 9px; color: var(--ink-soft); white-space: nowrap; }
+.switcher a:hover { color: var(--ink); }
+.switcher a[aria-selected="true"] { background: var(--teal); color: #fff; }
+.panel[hidden] { display: none; }
 .video-frame { max-width: 1040px; margin: 0 auto; border-radius: 20px; overflow: hidden; background: #0e1514; box-shadow: 0 30px 70px rgba(30,36,34,0.16); }
 .video-ratio { position: relative; width: 100%; aspect-ratio: 100 / 46.11; }
 .video-ratio iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -111,16 +117,33 @@ footer { padding: 48px 0 40px; }
 <div class="wrap">
 <div class="demo-head">
 <span class="eyebrow-tag">Product walkthrough</span>
-<h1>See SeeMySite in action</h1>
-<p>A guided tour through the dashboard, rostering, GPS-verified check-ins and timesheets, so you can see how it fits your own team before you start a trial.</p>
+<h1 id="demo-title">See the software in action</h1>
+<p id="demo-sub">A guided tour through the dashboard, rostering, GPS-verified check-ins and timesheets, so you can see how it fits your own team before you start a trial.</p>
 </div>
 
+<nav class="switcher" aria-label="Choose a video">
+<a href="#software" id="tab-software" aria-selected="true">Software</a>
+<a href="#worker-app" id="tab-worker-app" aria-selected="false">Worker App</a>
+</nav>
+
+<div class="panel" id="panel-software">
 <div class="video-frame">
 <div class="video-ratio">
-<iframe src="https://player.vimeo.com/video/1232836230?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="SeeMySite product overview video"></iframe>
+<iframe data-src="https://player.vimeo.com/video/1232836230?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="SeeMySite software overview video"></iframe>
 </div>
 </div>
+</div>
+
+<div class="panel" id="panel-worker-app" hidden>
+<div class="video-frame">
+<div class="video-ratio">
+<iframe data-src="https://player.vimeo.com/video/1232859203?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="SeeMySite worker app video"></iframe>
+</div>
+</div>
+</div>
+
 <p class="video-note">Best viewed full screen. Use the fullscreen button in the player's bottom-right corner.</p>
+<noscript><p class="video-note">Videos need JavaScript. Watch directly on Vimeo: <a href="https://vimeo.com/1232836230">Software</a> | <a href="https://vimeo.com/1232859203">Worker App</a></p></noscript>
 
 <div class="demo-next">
 <h2>Like what you see?</h2>
@@ -160,6 +183,55 @@ footer { padding: 48px 0 40px; }
 </div>
 </div>
 </footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Two videos, one page. Only the one being watched is loaded (its iframe
+// src is set on demand), and the other is unloaded so it stops playing.
+var VIDEOS = {
+  'software': {
+    title: 'See the software in action',
+    sub: 'A guided tour through the dashboard, rostering, GPS-verified check-ins and timesheets, so you can see how it fits your own team before you start a trial.'
+  },
+  'worker-app': {
+    title: 'See the worker app in action',
+    sub: 'What your team sees on their phones: checking in and out with GPS verification, straight from the browser with nothing to download from an app store.'
+  }
+};
+
+function showVideo(key) {
+  if (!VIDEOS[key]) key = 'software';
+  Object.keys(VIDEOS).forEach(function (k) {
+    var panel = document.getElementById('panel-' + k);
+    var tab = document.getElementById('tab-' + k);
+    var frame = panel.querySelector('iframe');
+    var active = (k === key);
+    panel.hidden = !active;
+    tab.setAttribute('aria-selected', active ? 'true' : 'false');
+    if (active) {
+      if (!frame.getAttribute('src')) frame.setAttribute('src', frame.getAttribute('data-src'));
+    } else {
+      frame.removeAttribute('src');
+    }
+  });
+  document.getElementById('demo-title').textContent = VIDEOS[key].title;
+  document.getElementById('demo-sub').textContent = VIDEOS[key].sub;
+}
+
+function keyFromHash() {
+  return window.location.hash.replace('#', '') || 'software';
+}
+
+document.querySelectorAll('.switcher a').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var key = a.getAttribute('href').replace('#', '');
+    history.replaceState(null, '', '#' + key);
+    showVideo(key);
+  });
+});
+window.addEventListener('hashchange', function () { showVideo(keyFromHash()); });
+showVideo(keyFromHash());
+</script>
 </body>
 </html>
