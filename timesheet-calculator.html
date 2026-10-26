@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timesheet Cost Calculator for Cleaning Companies | SeeMySite</title>
+<meta name="description" content="Work out what paper timesheets cost your cleaning business each year, and what GPS-verified mobile check-in would change. Real numbers, adjustable assumptions.">
+<link rel="canonical" href="https://www.seemysite.cloud/timesheet-calculator.html">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SeeMySite">
+<meta property="og:title" content="Timesheet Cost Calculator for Cleaning Companies | SeeMySite">
+<meta property="og:description" content="Work out what paper timesheets cost your cleaning business each year, and what GPS-verified mobile check-in would change. Real numbers, adjustable assumptions.">
+<meta property="og:url" content="https://www.seemysite.cloud/timesheet-calculator.html">
+<meta property="og:image" content="https://www.seemysite.cloud/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SeeMySite: employee scheduling and GPS time tracking, with a live map of sites and workers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Timesheet Cost Calculator for Cleaning Companies | SeeMySite">
+<meta name="twitter:description" content="Work out what paper timesheets cost your cleaning business each year, and what GPS-verified mobile check-in would change. Real numbers, adjustable assumptions.">
+<meta name="twitter:image" content="https://www.seemysite.cloud/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Timesheet cost calculator for cleaning companies",
+  "url": "https://www.seemysite.cloud/timesheet-calculator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "description": "Estimate what paper timesheets cost a cleaning business each year, and what GPS-verified mobile check-in would change.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SeeMySite",
+    "url": "https://www.seemysite.cloud/"
+  }
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF9BHD6400"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EF9BHD6400');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --teal-dark: #0B5555; --teal: #0F6E6E; --amber: #C98A2C; --green: #2E7D5B; --red: #B4483C; --bg: #FAFAF8; --surface: #FFFFFF; --ink: #1E2422; --ink-soft: #5B6664; --line: #E1DFD8; --font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.6; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01em; color: var(--ink); }
+p { margin: 0; }
+a { color: var(--teal-dark); }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.narrow { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+header { position: sticky; top: 0; z-index: 20; background: rgba(250,250,248,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1140px; margin: 0 auto; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; text-decoration: none; color: var(--ink); }
+.brand-mark { width: 30px; height: 30px; border-radius: 8px; background: var(--teal); position: relative; flex-shrink: 0; }
+.brand-mark::after { content: ''; position: absolute; inset: 7px; border: 2px solid #fff; border-radius: 50%; }
+.nav-links { display: flex; align-items: center; gap: 28px; font-size: 14.5px; font-weight: 500; }
+.nav-links a { text-decoration: none; color: var(--ink-soft); }
+.nav-links a:hover { color: var(--ink); }
+@media (max-width: 1060px) { .nav-links { gap: 18px; font-size: 14px; } }
+.btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 10px; text-decoration: none; cursor: pointer; border: 1.5px solid transparent; }
+.btn-primary { background: var(--teal); color: #fff; }
+.btn-primary:hover { background: var(--teal-dark); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--teal); }
+.btn-light { background: #fff; color: var(--teal-dark); }
+.btn-light:hover { background: #E3EEF0; }
+.btn-sm { padding: 9px 16px; font-size: 14px; }
+.nav .btn { display: none; }
+@media (min-width: 720px) { .nav .btn { display: inline-flex; } }
+.mobile-hide { display: none; }
+@media (min-width: 860px) { .mobile-hide { display: flex; } }
+.page-hero { padding: 64px 0 24px; }
+.page-hero h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; }
+.lede { font-size: 19px; color: var(--ink-soft); margin-top: 18px; max-width: 62ch; }
+.hero-split { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; }
+@media (min-width: 900px) { .hero-split { grid-template-columns: 1.08fr 0.92fr; gap: 48px; } }
+.hero-split .shot { margin: 0; max-width: 560px; justify-self: center; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.section { padding: 40px 0; }
+.section h2 { font-size: clamp(24px, 3vw, 30px); line-height: 1.2; }
+.section > .narrow > p, .section > .wrap > p { color: var(--ink-soft); font-size: 16.5px; margin-top: 14px; max-width: 70ch; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; }
+.card h3 { font-size: 19px; line-height: 1.3; }
+.card p { color: var(--ink-soft); font-size: 15.5px; margin-top: 10px; }
+.grid-3, .grid-2 { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 24px; }
+@media (min-width: 860px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } .grid-2 { grid-template-columns: 1fr 1fr; } }
+.accent-teal { border-top: 4px solid var(--teal); } .accent-green { border-top: 4px solid var(--green); } .accent-amber { border-top: 4px solid var(--amber); }
+.pull { border-left: 4px solid var(--amber); padding: 6px 0 6px 20px; margin: 32px 0 0; font-family: var(--font-display); font-size: 22px; line-height: 1.35; color: var(--ink); max-width: 60ch; }
+.pull cite { display: block; font-family: var(--font-body); font-size: 14px; color: var(--ink-soft); font-style: normal; margin-top: 8px; }
+.tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal-dark); background: #E3EEF0; padding: 4px 10px; border-radius: 99px; margin-bottom: 12px; }
+.tbl-wrap { overflow-x: auto; max-width: 780px; margin-top: 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 15px; }
+th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--ink-soft); }
+th { font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.05em; background: #F4F6F5; }
+td:first-child { color: var(--ink); font-weight: 600; }
+tr:last-child td { border-bottom: 0; }
+.section p.note, .note { font-size: 13.5px; color: var(--ink-soft); margin-top: 10px; }
+.feat-grid { display: grid; grid-template-columns: 1fr; gap: 14px 32px; margin-top: 22px; }
+@media (min-width: 760px) { .feat-grid { grid-template-columns: 1fr 1fr; } }
+.feat { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; color: var(--ink-soft); line-height: 1.5; }
+.feat .tick { color: var(--green); font-weight: 700; flex-shrink: 0; }
+.feat strong { color: var(--ink); }
+.shot { margin: 28px auto 0; max-width: 640px; }
+.shot img { filter: drop-shadow(0 18px 26px rgba(11,85,85,0.22)); }
+.shot figcaption { font-size: 13.5px; color: var(--ink-soft); text-align: center; margin-top: 18px; }
+.price-card { background: var(--teal-dark); color: #fff; border-radius: 20px; padding: 34px 32px; margin-top: 22px; max-width: 780px; }
+.price-pair { display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 640px) { .price-pair { grid-template-columns: 1fr 1fr; gap: 32px; } }
+.price-unit { border-left: 3px solid var(--amber); padding-left: 18px; }
+.price-unit .label { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #BFD9D5; }
+.price-unit p { margin-top: 6px; }
+.price-example { margin-top: 26px; padding: 16px 20px; background: rgba(255,255,255,0.10); border-radius: 12px; font-size: 17px; line-height: 1.5; color: #fff; }
+.price-example strong { color: #fff; }
+.price-card .big { font-family: var(--font-display); font-size: clamp(38px, 6vw, 54px); font-weight: 700; line-height: 1.05; color: #fff; }
+.price-card .big span { font-size: 0.4em; font-weight: 500; opacity: 0.85; }
+.price-card p { color: #D7E8E5; font-size: 16.5px; margin-top: 12px; max-width: 62ch; }
+.price-card ul { margin: 14px 0 0; padding-left: 20px; color: #D7E8E5; font-size: 15.5px; } .price-card li { margin-bottom: 6px; }
+.price-card .btn { margin-top: 20px; }
+details.faq { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0 20px; margin-top: 12px; max-width: 780px; }
+details.faq summary { cursor: pointer; font-weight: 600; font-size: 16.5px; padding: 16px 28px 16px 0; list-style: none; position: relative; color: var(--ink); }
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after { content: '+'; position: absolute; right: 0; top: 14px; font-size: 22px; font-weight: 500; color: var(--teal); }
+details.faq[open] summary::after { content: '\2013'; }
+details.faq p { padding: 0 0 18px; color: var(--ink-soft); font-size: 15.5px; margin: 0; }
+.cta-band { background: var(--teal-dark); color: #fff; padding: 60px 0; text-align: center; margin-top: 40px; }
+.cta-band h2 { color: #fff; font-size: clamp(26px, 3.4vw, 34px); }
+.cta-band p { color: #D7E8E5; margin-top: 12px; font-size: 16.5px; }
+.cta-band .btn { margin-top: 24px; }
+.facts { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 12px; }
+.facts li { display: grid; grid-template-columns: 110px 1fr; gap: 12px; font-size: 16px; color: var(--ink-soft); }
+.facts b { color: var(--ink); font-weight: 600; }
+footer { padding: 40px 0; border-top: 1px solid var(--line); margin-top: 0; }
+.footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: center; max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.footer-links { display: flex; gap: 22px; font-size: 14px; color: var(--ink-soft); flex-wrap: wrap; }
+.footer-links a { text-decoration: none; color: var(--ink-soft); }
+.footer-links a:hover { color: var(--ink); }
+.foot-copy { font-size: 13.5px; color: var(--ink-soft); }
+
+.calc-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 28px; align-items: start; }
+@media (min-width: 980px) { .calc-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .calc-results { position: sticky; top: 92px; } }
+.calc-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 26px; }
+.calc-card h2 { font-size: 21px; margin-bottom: 4px; }
+.calc-card .sub { color: var(--ink-soft); font-size: 14.5px; }
+.field { display: grid; gap: 6px; margin-top: 16px; }
+.field label { font-weight: 600; font-size: 15px; color: var(--ink); line-height: 1.35; }
+.field .hint { font-size: 13px; color: var(--ink-soft); line-height: 1.4; }
+.field input, .field select { width: 100%; font: inherit; font-size: 16px; padding: 11px 12px; border: 1.5px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); }
+.field input:focus, .field select:focus { outline: 3px solid rgba(15,110,110,0.25); border-color: var(--teal); }
+.affix { position: relative; }
+.affix .pre, .affix .post { position: absolute; top: 50%; transform: translateY(-50%); color: var(--ink-soft); font-size: 15px; pointer-events: none; }
+.affix .pre { left: 12px; } .affix .post { right: 12px; }
+.affix.has-pre input { padding-left: 26px; } .affix.has-post input { padding-right: 30px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: end; }
+@media (max-width: 480px) { .two { grid-template-columns: 1fr; gap: 0; } }
+details.assume { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 14px; }
+details.assume summary { cursor: pointer; font-weight: 600; color: var(--teal-dark); }
+.link-btn { background: none; border: 0; color: var(--teal-dark); text-decoration: underline; cursor: pointer; font: inherit; font-size: 14px; padding: 0; margin-top: 18px; }
+.res-head { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 420px) { .res-head { grid-template-columns: 1fr; } }
+.res-box { border-radius: 14px; padding: 16px 18px; border: 1px solid var(--line); background: #fff; }
+.res-box .lbl { font-size: 12.5px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-soft); }
+.res-box .num { font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 3.6vw, 34px); line-height: 1.1; margin-top: 6px; }
+.res-box .per { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+.res-paper { border-top: 4px solid var(--red); } .res-paper .num { color: var(--red); }
+.res-mobile { border-top: 4px solid var(--green); } .res-mobile .num { color: var(--green); }
+.res-diff { margin-top: 14px; background: var(--teal-dark); border-radius: 14px; padding: 18px 20px; }
+.res-diff .lbl { font-size: 12.5px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #BFD9D5; }
+.res-diff .num { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4.4vw, 40px); line-height: 1.1; color: #fff; margin-top: 6px; }
+.res-diff p { color: #D7E8E5; font-size: 14.5px; margin-top: 6px; }
+.res-diff.neg { background: #6B4A1E; }
+.bars { margin-top: 18px; display: grid; gap: 10px; }
+.bar-row { display: grid; grid-template-columns: 84px 1fr; align-items: center; gap: 10px; font-size: 13.5px; color: var(--ink-soft); }
+.bar-track { background: #F1F0EB; border-radius: 8px; height: 22px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 8px; transition: width 0.25s ease; }
+.bar-paper { background: var(--red); } .bar-mobile { background: var(--green); }
+.calc-card table.break { min-width: 0; margin-top: 18px; font-size: 14.5px; }
+.calc-card table.break th, .calc-card table.break td { padding: 9px 10px; }
+.calc-card table.break td:not(:first-child), .calc-card table.break th:not(:first-child) { text-align: right; white-space: nowrap; }
+.calc-card table.break tr.total td { font-weight: 700; color: var(--ink); border-top: 2px solid var(--line); }
+.count-on { margin-top: 16px; padding: 14px 16px; background: #EEF5F1; border: 1px solid #CFE3D8; border-radius: 12px; font-size: 15px; color: var(--ink); line-height: 1.5; }
+.fine { font-size: 13px; color: var(--ink-soft); margin-top: 14px; line-height: 1.5; }
+.res-cta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.src-list { margin: 14px 0 0; padding-left: 20px; color: var(--ink-soft); font-size: 16px; max-width: 72ch; }
+.src-list li { margin-bottom: 10px; }
+.two-cols { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 20px; }
+@media (min-width: 760px) { .two-cols { grid-template-columns: 1fr 1fr; } }
+.noscript-note { background: #FFF6E5; border: 1px solid #EBD6A8; padding: 14px 16px; border-radius: 12px; margin-top: 20px; }
+</style>
+</head>
+<body>
+<header>
+<div class="nav">
+<a href="index.html" class="brand"><span class="brand-mark"></span>SeeMySite</a>
+<nav class="nav-links mobile-hide" aria-label="Main">
+<a href="index.html#how-it-works">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="cleaning-companies.html">For cleaning companies</a>
+<a href="index.html#pricing">Pricing</a>
+<a href="index.html#faq">FAQ</a>
+</nav>
+<div style="display:flex; gap:10px; align-items:center;">
+<a href="https://seemysite-app.vercel.app/login" class="nav-links mobile-hide" style="font-weight:600;">Sign in</a>
+<a href="https://seemysite-app.vercel.app/signup" class="btn btn-primary btn-sm">Start free trial</a>
+</div>
+</div>
+</header>
+
+<main>
+<section class="page-hero"><div class="wrap">
+<h1 style="max-width:22ch;">Timesheet cost calculator for cleaning companies</h1>
+<p class="lede">What do paper timesheets really cost your cleaning business, and what would GPS-verified mobile check-in change? Enter your own numbers. Every assumption is visible, and you can change all of them.</p>
+<noscript><p class="noscript-note">This calculator needs JavaScript. Please turn it on in your browser, or email <a href="mailto:support@seemysite.cloud">support@seemysite.cloud</a> and we will work it out with you.</p></noscript>
+<div class="calc-grid">
+<div class="calc-card" id="inputs">
+<h2>Your crew</h2>
+<p class="sub">Defaults are for a small crew of ten cleaners. Change them to match yours.</p>
+<div class="field"><label for="workers">How many cleaners do you pay?</label><input id="workers" type="number" inputmode="decimal" min="0" step="1" value="10"></div>
+<div class="two">
+<div class="field"><label for="wage">Average hourly wage</label><div class="affix has-pre"><span class="pre">$</span><input id="wage" type="number" inputmode="decimal" min="0" step="0.25" value="18"></div></div>
+<div class="field"><label for="hours">Average hours per cleaner, per week</label><input id="hours" type="number" inputmode="decimal" min="0" step="0.5" value="25"></div>
+</div>
+<div class="field"><label for="freq">How often do you run payroll?</label><select id="freq"><option value="52">Weekly</option><option value="26" selected>Every two weeks</option><option value="24">Twice a month</option><option value="12">Monthly</option></select></div>
+<div class="two">
+<div class="field"><label for="managers">Managers or owners who would schedule and approve hours</label><input id="managers" type="number" inputmode="decimal" min="0" step="1" value="1"></div>
+<div class="field"><label for="mgrRate">What is your own time worth, per hour?</label><div class="affix has-pre"><span class="pre">$</span><input id="mgrRate" type="number" inputmode="decimal" min="0" step="1" value="30"></div></div>
+</div>
+<div class="field"><label for="adminHours">Hours you spend on timesheets each pay period</label><input id="adminHours" type="number" inputmode="decimal" min="0" step="0.25" value="2"><span class="hint">Collecting the sheets, reading the handwriting, adding up hours, typing them into payroll and fixing mistakes. A typical range is 5 to 15 minutes per cleaner.</span></div>
+<details class="assume">
+<summary>See and change the assumptions</summary>
+<p class="sub" style="margin-top:10px;">These are cautious estimates, set at the low end of published figures. The reduction with SeeMySite is our assumption, not a measured result.</p>
+<div class="two">
+<div class="field"><label for="theftPaper">Time lost on paper</label><div class="affix has-post"><input id="theftPaper" type="number" inputmode="decimal" min="0" step="0.1" value="1.5"><span class="post">%</span></div><span class="hint">Padding, rounding and buddy punching, as a share of payroll.</span></div>
+<div class="field"><label for="theftMobile">Still lost with SeeMySite</label><div class="affix has-post"><input id="theftMobile" type="number" inputmode="decimal" min="0" step="0.1" value="0.5"><span class="post">%</span></div><span class="hint">Check-in is verified by GPS at the site.</span></div>
+<div class="field"><label for="errPaper">Payroll errors on paper</label><div class="affix has-post"><input id="errPaper" type="number" inputmode="decimal" min="0" step="0.1" value="0.5"><span class="post">%</span></div><span class="hint">Only the share that costs you money.</span></div>
+<div class="field"><label for="errMobile">Payroll errors with SeeMySite</label><div class="affix has-post"><input id="errMobile" type="number" inputmode="decimal" min="0" step="0.1" value="0.1"><span class="post">%</span></div><span class="hint">Hours flow to payroll with no retyping.</span></div>
+</div>
+<div class="field"><label for="adminAfter">Hours per pay period still needed to review and approve</label><input id="adminAfter" type="number" inputmode="decimal" min="0" step="0.25" value="0.5"></div>
+</details>
+<button type="button" class="link-btn" id="reset">Reset to the defaults</button>
+</div>
+<div class="calc-card calc-results" aria-live="polite">
+<h2>What it costs each year</h2>
+<p class="sub" id="payrollLine">&nbsp;</p>
+<div class="res-head">
+<div class="res-box res-paper"><div class="lbl">Paper timesheets</div><div class="num" id="paperTotal">&nbsp;</div><div class="per">a year</div></div>
+<div class="res-box res-mobile"><div class="lbl">With SeeMySite</div><div class="num" id="mobileTotal">&nbsp;</div><div class="per">a year, subscription included</div></div>
+</div>
+<div class="res-diff" id="diffBox"><div class="lbl" id="diffLabel">Difference</div><div class="num" id="diffNum">&nbsp;</div><p id="diffMonthly">&nbsp;</p></div>
+<div class="bars">
+<div class="bar-row"><span>Paper</span><div class="bar-track"><div class="bar-fill bar-paper" id="barPaper" style="width:0%"></div></div></div>
+<div class="bar-row"><span>SeeMySite</span><div class="bar-track"><div class="bar-fill bar-mobile" id="barMobile" style="width:0%"></div></div></div>
+</div>
+<table class="break"><thead><tr><th>Where the money goes</th><th>Paper</th><th>SeeMySite</th></tr></thead><tbody>
+<tr><td>Time padding and buddy punching</td><td id="pTheft">&nbsp;</td><td id="mTheft">&nbsp;</td></tr>
+<tr><td>Payroll errors</td><td id="pErr">&nbsp;</td><td id="mErr">&nbsp;</td></tr>
+<tr><td>Your time on timesheets</td><td id="pAdmin">&nbsp;</td><td id="mAdmin">&nbsp;</td></tr>
+<tr><td>SeeMySite subscription</td><td>&ndash;</td><td id="mSub">&nbsp;</td></tr>
+<tr class="total"><td>Total</td><td id="pTotal">&nbsp;</td><td id="mTotal">&nbsp;</td></tr>
+</tbody></table>
+<div class="count-on" id="countOn">&nbsp;</div>
+<div class="res-cta"><a href="https://seemysite-app.vercel.app/signup" class="btn btn-primary">Start your 30-day free trial</a><span class="fine" style="margin:0;">No card required.</span></div>
+<p class="fine">This is an estimate based on the numbers you enter and the assumptions above. It is not a guarantee. It counts wages only: if you also pay payroll taxes or other costs on top of wages, lost hours cost you more.</p>
+</div>
+</div>
+</div></section>
+<section class="section"><div class="narrow">
+<h2>How the calculator works</h2>
+<p>It adds up three costs of running payroll from paper timesheets, then compares them with the same three costs using mobile check-in with GPS verification, plus the SeeMySite subscription. Your yearly payroll is worked out as cleaners &times; hours per week &times; 52 &times; hourly wage.</p>
+<ul class="src-list">
+<li><strong>Time padding and buddy punching.</strong> A percentage of payroll lost to rounding up start and finish times, long breaks written down as work, and one person signing in for another. The default is 1.5%, the low end of published estimates.</li>
+<li><strong>Payroll errors.</strong> Handwriting misread, hours added up wrongly, numbers mistyped into payroll. Errors cut both ways, so we count only the share that costs you money. The default is 0.5%.</li>
+<li><strong>Your time.</strong> The hours you spend each pay period collecting, checking and entering timesheets, valued at your hourly rate. The default is two hours for a crew of ten.</li>
+<li><strong>With SeeMySite.</strong> Hours are time-stamped on the cleaner&rsquo;s own phone, checked against the site&rsquo;s location, and flow into a timesheet you approve. We assume less is lost (0.5% and 0.1%) and that review takes half an hour. These are our assumptions, not measured results.</li>
+<li><strong>The subscription.</strong> $5 per month for each admin and $2 per month for each worker. Text-message invites are the only extra charge.</li>
+</ul>
+</div></section>
+<section class="section"><div class="narrow">
+<h2>Where the numbers come from</h2>
+<p>Published estimates vary widely, and almost all of them come from companies that sell time tracking, so treat them as ballparks. We set our defaults at the cautious end on purpose.</p>
+<ul class="src-list">
+<li><a href="https://timedock.com/docs/the-hidden-cost-of-timesheet-theft" rel="noopener noreferrer" target="_blank">TimeDock (2023)</a> quotes an American Payroll Association estimate that time theft costs 1.5% to 5% of gross payroll, and a Nucleus Research average of 2.2% for buddy punching.</li>
+<li><a href="https://socialschedules.com/blog/paper-timesheets-vs-digital-timecards-why-the-switch-pays-for-itself/" rel="noopener noreferrer" target="_blank">SocialSchedules (2026)</a> says manual payroll error rates run 1% to 8%, and that collecting and entering timesheets for 20 employees can take 3 to 5 hours per pay period.</li>
+<li><a href="https://www.timehub.co.nz/payrollhq-the-timehub-blog/why-manual-time-sheets-or-punch-clocks-bad-for-your-business/" rel="noopener noreferrer" target="_blank">TimeHub (2019)</a> puts calculating and keying a paper timesheet at about five minutes, and says automating attendance typically saves 2% to 5% of annual wages.</li>
+<li><a href="https://ablemkr.com/manual-vs-digital-workforce-management-cost-comparison/" rel="noopener noreferrer" target="_blank">ABLEMKR (2026)</a> says buddy punching can inflate payroll by up to 7%.</li>
+</ul>
+<p>The questions in this calculator come from Barry Williams&rsquo;s 25 years of visiting cleaning companies (<a href="about.html">more about him</a>). The assumption that GPS-verified check-in leaves less loss is ours: none of the sources above measures it.</p>
+</div></section>
+<section class="section"><div class="narrow">
+<h2>What mobile check-in can and can&rsquo;t do</h2>
+<div class="two-cols">
+<div class="card accent-green"><h3>What it can do</h3><p>Confirm a cleaner checked in at the right site, time-stamp arrivals and departures, remove the retyping, and show budgeted hours against hours worked.</p></div>
+<div class="card accent-amber"><h3>What it can&rsquo;t do</h3><p>Prove how long someone worked after checking in, or how well. That is why SeeMySite also lets cleaners attach photos to a job, and shows budgeted against actual hours for every site.</p></div>
+</div>
+<p>Most extra time on a timesheet is small rounding, not deliberate theft. The aim is accurate records that protect honest cleaners as well as you.</p>
+</div></section>
+<section class="section"><div class="narrow">
+<h2>Questions about this calculator</h2>
+<details class="faq"><summary>Is time theft really common among cleaners?</summary><p>Published estimates vary widely, and most extra time on a timesheet is small rounding rather than deliberate theft. Don&rsquo;t assume your crew is cheating. If you think your losses are lower, set the percentage to zero and see what is left: the time you save on paperwork still counts.</p></details>
+<details class="faq"><summary>Why is the default only 1.5%?</summary><p>It is the low end of the published ranges we found. We would rather show you a cautious number you can believe than a large one you can&rsquo;t.</p></details>
+<details class="faq"><summary>Does the calculator include payroll taxes?</summary><p>No. It uses wages only. If you also pay payroll taxes, insurance or other costs on top of wages, every hour lost costs you more than this shows.</p></details>
+<details class="faq"><summary>What if my result shows a small saving, or none?</summary><p>Then trust it. The calculator is meant to be honest, and the answer will not be the same for every business. A small crew with very tidy paperwork may save little. A crew across many sites, with sheets that arrive late, usually saves more.</p></details>
+<details class="faq"><summary>What does SeeMySite cost?</summary><p>$5 per month for each admin and $2 per month for each worker. Text-message invites are the only extra charge. There is a 30-day free trial with no card required, and you can cancel any time.</p></details>
+<details class="faq"><summary>Is this a guarantee?</summary><p>No. It is an estimate based on the numbers you enter and the assumptions you can see and change. It is not financial or legal advice.</p></details>
+</div></section>
+<section class="cta-band"><div class="narrow">
+<h2>Try it with your own crew</h2>
+<p>30-day free trial. No card required. Cancel any time.</p>
+<a href="https://seemysite-app.vercel.app/signup" class="btn btn-light">Start your 30-day free trial</a>
+</div></section>
+</main>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var fmt = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  var money = function (n) { return fmt.format(Math.round(n)); };
+  var DEF = { workers: 10, wage: 18, hours: 25, freq: '26', managers: 1, mgrRate: 30, adminHours: 2, theftPaper: 1.5, theftMobile: 0.5, errPaper: 0.5, errMobile: 0.1, adminAfter: 0.5 };
+  var IDS = Object.keys(DEF);
+  function val(id, max) {
+    var v = parseFloat($(id).value);
+    if (!isFinite(v) || v < 0) v = 0;
+    return v > max ? max : v;
+  }
+  function calc() {
+    var workers = val('workers', 2000), wage = val('wage', 300), hours = val('hours', 80);
+    var freq = parseInt($('freq').value, 10) || 26;
+    var managers = val('managers', 100), mgrRate = val('mgrRate', 1000), adminHours = val('adminHours', 200);
+    var tp = val('theftPaper', 25) / 100, tm = val('theftMobile', 25) / 100, ep = val('errPaper', 25) / 100, em = val('errMobile', 25) / 100, aa = val('adminAfter', 200);
+    var payroll = workers * hours * 52 * wage;
+    var p = { theft: payroll * tp, err: payroll * ep, admin: adminHours * freq * mgrRate };
+    var m = { theft: payroll * tm, err: payroll * em, admin: aa * freq * mgrRate, sub: (managers * 5 + workers * 2) * 12 };
+    var pTotal = p.theft + p.err + p.admin;
+    var mTotal = m.theft + m.err + m.admin + m.sub;
+    var diff = pTotal - mTotal;
+    $('payrollLine').textContent = 'Based on a yearly payroll of about ' + money(payroll) + '.';
+    $('paperTotal').textContent = money(pTotal);
+    $('mobileTotal').textContent = money(mTotal);
+    var neg = diff < 0;
+    $('diffBox').className = 'res-diff' + (neg ? ' neg' : '');
+    $('diffLabel').textContent = neg ? 'At these numbers SeeMySite costs you more' : 'Estimated saving';
+    $('diffNum').textContent = money(Math.abs(diff)) + ' a year';
+    $('diffMonthly').textContent = neg ? 'That is about ' + money(Math.abs(diff) / 12) + ' a month more than it saves. Try the assumptions below, or your own time figures.' : 'About ' + money(diff / 12) + ' a month, after paying for SeeMySite.';
+    var top = Math.max(pTotal, mTotal, 1);
+    $('barPaper').style.width = Math.max(2, Math.round(pTotal / top * 100)) + '%';
+    $('barMobile').style.width = Math.max(2, Math.round(mTotal / top * 100)) + '%';
+    $('pTheft').textContent = money(p.theft); $('mTheft').textContent = money(m.theft);
+    $('pErr').textContent = money(p.err); $('mErr').textContent = money(m.err);
+    $('pAdmin').textContent = money(p.admin); $('mAdmin').textContent = money(m.admin);
+    $('mSub').textContent = money(m.sub);
+    $('pTotal').textContent = money(pTotal); $('mTotal').textContent = money(mTotal);
+    var timeSave = p.admin - m.admin, msg;
+    if (timeSave <= 0) {
+      msg = '<strong>What you can count on:</strong> at these numbers the manager time saved does not cover the subscription, so the case rests on how much you lose to padding and errors.';
+    } else if (timeSave >= m.sub && m.sub > 0) {
+      var ratio = timeSave / m.sub;
+      msg = '<strong>What you can count on:</strong> even if you assume no time padding and no payroll errors at all, the time you would save is worth about ' + money(timeSave) + ' a year. That is ' + (ratio >= 10 ? Math.round(ratio) : ratio.toFixed(1).replace(/\.0$/, '')) + ' times the ' + money(m.sub) + ' a year subscription.';
+    } else if (m.sub > 0) {
+      msg = '<strong>What you can count on:</strong> the time you would save is worth about ' + money(timeSave) + ' a year, which covers about ' + Math.round(timeSave / m.sub * 100) + '% of the ' + money(m.sub) + ' a year subscription. The rest of the case depends on how much you lose to padding and errors.';
+    } else {
+      msg = '<strong>What you can count on:</strong> the time you would save is worth about ' + money(timeSave) + ' a year.';
+    }
+    $('countOn').innerHTML = msg;
+  }
+  IDS.forEach(function (id) { $(id).addEventListener('input', calc); $(id).addEventListener('change', calc); });
+  $('reset').addEventListener('click', function () { IDS.forEach(function (id) { $(id).value = DEF[id]; }); calc(); });
+  calc();
+})();
+</script>
+
+<footer>
+<div class="footer-grid">
+<a href="index.html" class="brand" style="font-size:16px;"><span class="brand-mark" style="width:22px;height:22px;"></span>SeeMySite</a>
+<div class="footer-links">
+<a href="index.html#features">Features</a>
+<a href="cleaning-companies.html">For cleaning companies</a>
+<a href="index.html#pricing">Pricing</a>
+<a href="timesheet-calculator.html">Timesheet calculator</a>
+<a href="about.html">About</a>
+<a href="https://seemysite-app.vercel.app/login">Sign in</a>
+<a href="privacy.html">Privacy</a>
+<a href="contact.html">Contact</a>
+</div>
+<div class="foot-copy">&copy; <span id="year">2026</span> SeeMySite Pty Ltd. All rights reserved.</div>
+</div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
