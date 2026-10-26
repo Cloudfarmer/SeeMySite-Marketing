@@ -76,6 +76,16 @@ header { position: sticky; top: 0; z-index: 20; background: rgba(250,250,248,0.9
 .hero-note { font-size: 13.5px; color: var(--ink-soft); margin-top: 16px; }
 .hero-media { margin-top: 56px; }
 .hero-media img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 30px 70px rgba(30,36,34,0.14); }
+/* ---------- Mapping promo (hero, right column) ---------- */
+.hero-right { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+.map-promo { background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 24px 24px 8px; box-shadow: 0 18px 44px rgba(30,36,34,0.08); overflow: hidden; }
+.map-promo-tag { display: inline-block; background: var(--amber); color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; padding: 5px 13px; border-radius: 99px; }
+.map-promo h2 { font-size: clamp(26px, 3.2vw, 34px); line-height: 1.1; margin-top: 12px; }
+.map-promo h2 span { color: var(--teal); }
+.map-promo p { font-size: 15.5px; color: var(--ink-soft); margin-top: 10px; max-width: 46ch; }
+.map-promo img { width: calc(100% + 48px); max-width: none; height: auto; margin: 6px -24px 0; }
+/* hero columns line up at the top: the left text starts level with the dashboard picture */
+@media (min-width: 900px) { .hero-grid { align-items: start; } }
 /* Geofence ring graphic */
 .ring-stage { position: relative; width: 100%; max-width: 380px; margin: 0 auto; }
 .ring-card { position: absolute; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; box-shadow: 0 12px 30px rgba(30,36,34,0.08); font-size: 13px; }
@@ -244,8 +254,16 @@ footer { padding: 48px 0 40px; }
 </div>
 <p class="hero-note">No app store install — works straight from a phone's browser, even with patchy signal on site.</p>
 </div>
+<div class="hero-right">
 <div class="hero-media" style="margin-top:0;">
 <img src="dashboard-screenshot.jpg" alt="SeeMySite dashboard showing Budget vs Actual vs Payable, active sites, workers on site, and open events">
+</div>
+<aside class="map-promo" id="mapping" aria-label="New feature: Mapping">
+<span class="map-promo-tag">NEW</span>
+<h2>Now Available &mdash; <span>Mapping!</span></h2>
+<p>See every site, and everyone on it, live on one map &mdash; who&rsquo;s on site, who&rsquo;s late, and what needs attention.</p>
+<img src="mapping-window.jpg" width="1544" height="1280" loading="lazy" alt="SeeMySite dashboard map showing live pins for each site, with a pop-up for Oban Road Site: three on site, one not arrived, two open events">
+</aside>
 </div>
 </div>
 </section>
